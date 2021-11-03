@@ -89,7 +89,8 @@ namespace StormyBot.Commands
                 }
             }
         }
-        [Command("classmanuel")]
+        [Command("classmanual")]
+        [Aliases("classmanuel")]
         [Description("a command to check a specific class")]
         public async Task ClassManual(CommandContext ctx)
         {

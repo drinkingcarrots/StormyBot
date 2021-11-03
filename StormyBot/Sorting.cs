@@ -78,5 +78,16 @@ namespace StormyBot
                 return name;
             }
         }
+        public bool MathCheck(string user, string answer)
+        {
+            if (user.Contains(answer))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

@@ -62,7 +62,8 @@ namespace StormyBot.Commands
         {
             String[] amogus = new string[] 
           { "https://cdn.discordapp.com/attachments/775541210189135912/905253663088443402/Screenshot_2021-10-08_9.34.05_PM.png",
-            "https://tenor.com/view/rainbow-drip-among-drip-drip-epic-rainbow-gif-20851337"};
+            "https://tenor.com/view/rainbow-drip-among-drip-drip-epic-rainbow-gif-20851337",
+            "https://giphy.com/gifs/cooking-stopmotion-unusual-I8VnyDUEtgDDq2jNlw"};
             Random rnd = new Random();
             await ctx.Channel.SendMessageAsync(amogus[rnd.Next(0, amogus.Length)]).ConfigureAwait(false);
         }

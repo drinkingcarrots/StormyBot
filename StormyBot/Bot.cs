@@ -59,6 +59,7 @@ namespace StormyBot
             Commands.RegisterCommands<ClassCommands>();
             Commands.RegisterCommands<FunCommands>();
             Commands.RegisterCommands<CheckCommands>();
+            Commands.RegisterCommands<MathCommands>();
 
             await Client.ConnectAsync();
 
