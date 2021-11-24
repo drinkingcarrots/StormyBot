@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace StormyBot
+namespace StormyBot.Bots
 {
     public struct ConfigJson
     {

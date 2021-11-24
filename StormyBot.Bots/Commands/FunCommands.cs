@@ -8,7 +8,8 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-namespace StormyBot.Commands
+
+namespace StormyBot.Bots.Commands
 {
     class FunCommands : BaseCommandModule
     {

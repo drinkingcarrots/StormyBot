@@ -12,7 +12,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Linq;
 
-namespace StormyBot.Commands
+namespace StormyBot.Bots.Commands
 {
     class ClassCommands : BaseCommandModule
     {

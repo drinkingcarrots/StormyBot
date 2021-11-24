@@ -3,9 +3,11 @@ using DSharpPlus.CommandsNext;
 using DSharpPlus.EventArgs;
 using DSharpPlus.Interactivity;
 using DSharpPlus.Interactivity.Extensions;
+using DSharpPlus.VoiceNext;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using StormyBot.Commands;
+using StormyBot.Bots;
+using StormyBot.Bots.Commands;
 using System;
 using System.IO;
 using System.Text;
@@ -19,6 +21,8 @@ namespace StormyBot
         public DiscordClient Client { get; private set; }
         public InteractivityExtension interactivity { get; private set; }
         public CommandsNextExtension Commands { get; private set; }
+        public VoiceNextExtension Voice { get; private set; }
+
         public async Task RunAsync()
         {
             var json = string.Empty;
@@ -40,6 +44,7 @@ namespace StormyBot
 
             Client = new DiscordClient(config);
 
+
             //Client.Ready += OnClientReady();
 
             Client.UseInteractivity(new InteractivityConfiguration
@@ -60,6 +65,10 @@ namespace StormyBot
             Commands.RegisterCommands<FunCommands>();
             Commands.RegisterCommands<CheckCommands>();
             Commands.RegisterCommands<MathCommands>();
+            Commands.RegisterCommands<PointsCommands>();
+            Commands.RegisterCommands<MusicCommands>();
+
+            this.Voice = this.Client.UseVoiceNext();
 
             await Client.ConnectAsync();
 

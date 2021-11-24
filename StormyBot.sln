@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31605.320
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31825.309
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StormyBot", "StormyBot\StormyBot.csproj", "{70D0AEF4-CD33-477B-A4D8-A632CCE72881}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StormyBot.Bots", "StormyBot.Bots\StormyBot.Bots.csproj", "{70D0AEF4-CD33-477B-A4D8-A632CCE72881}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StormyBot.Bots", "StormyBot.Bots", "{A38BDC96-3EBE-4345-ABB1-C1987F02D3A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,6 +20,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{70D0AEF4-CD33-477B-A4D8-A632CCE72881} = {A38BDC96-3EBE-4345-ABB1-C1987F02D3A2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8698944F-6115-419C-91C1-44845A9B4CB2}
