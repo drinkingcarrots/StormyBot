@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace StormyBot.Bots
+namespace StormyBot
 {
     public class PointHandler
     {

@@ -1,4 +1,4 @@
-﻿using StormyBot.Bots;
+﻿using StormyBot;
 using System;
 
 namespace StormyBot
@@ -8,8 +8,6 @@ namespace StormyBot
         static void Main(string[] args)
         {
             var bot = new Bot();
-            //var pointhandler = new PointHandler();
-            //pointhandler.Reader();
             bot.RunAsync().GetAwaiter().GetResult();
         }
     }

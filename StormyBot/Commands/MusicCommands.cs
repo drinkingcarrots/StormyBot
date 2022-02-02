@@ -17,7 +17,7 @@ using DSharpPlus.VoiceNext;
 using System.IO;
 using System.Diagnostics;
 
-namespace StormyBot.Bots.Commands
+namespace StormyBot.Commands
 {
     //
     // 99% code taken from https://github.com/DSharpPlus/Example-Bots/blob/master/DSPlus.Examples.CSharp.Ex04/Program.cs
@@ -25,7 +25,7 @@ namespace StormyBot.Bots.Commands
     public class MusicCommands : BaseCommandModule
     {
         [Command("join"), Description("Joins a voice channel.")]
-        [RequireRoles(RoleCheckMode.Any, "Admin", "Staff", "Instructors", "Seniors", "testrole")]
+        [RequireRoles(RoleCheckMode.Any, "Admin", "Staff", "Instructors", "Seniors", "testrole", "TECHNICAL TEAM*", "TECHNICAL TEAM")]
         public async Task Join(CommandContext ctx, DiscordChannel chn = null)
         {
             // check whether VNext is enabled
@@ -65,7 +65,7 @@ namespace StormyBot.Bots.Commands
         }
 
         [Command("leave"), Description("Leaves a voice channel.")]
-        [RequireRoles(RoleCheckMode.Any, "Admin", "Staff", "Instructors", "Seniors", "testrole")]
+        [RequireRoles(RoleCheckMode.Any, "Admin", "Staff", "Instructors", "Seniors", "testrole", "TECHNICAL TEAM*", "TECHNICAL TEAM")]
         public async Task Leave(CommandContext ctx)
         {
             // check whether VNext is enabled
@@ -92,12 +92,12 @@ namespace StormyBot.Bots.Commands
         }
 
         [Command("play"), Description("Plays an audio file.")]
-        [RequireRoles(RoleCheckMode.Any, "Admin", "Staff", "Instructors", "Seniors", "testrole")]
-        public async Task Play(CommandContext ctx, [RemainingText, Description("name of file")] string filename)
+        [RequireRoles(RoleCheckMode.Any, "Admin", "Staff", "Instructors", "Seniors", "testrole", "TECHNICAL TEAM*", "TECHNICAL TEAM")]
+        public async Task Play(CommandContext ctx, [RemainingText, Description("name of file")] string file)
         {
             // check whether VNext is enabled
 
-            filename = @"Z:\StormyBot\StormyBot\StormyBot.Bots\Music\" + filename + ".mp3";
+            string filename = @"Z:\StormyBot\StormyBot\StormyBot.Bots\Music\" + file + ".mp3";
 
             var vnext = ctx.Client.GetVoiceNext();
             if (vnext == null)
@@ -120,7 +120,7 @@ namespace StormyBot.Bots.Commands
             if (!File.Exists(filename))
             {
                 // file does not exist
-                await ctx.RespondAsync($"File `{filename}` does not exist.");
+                await ctx.RespondAsync($"File `{file}` does not exist.");
                 return;
             }
 
@@ -130,7 +130,7 @@ namespace StormyBot.Bots.Commands
 
             // play
             Exception exc = null;
-            await ctx.Message.RespondAsync($"Playing `{filename}`");
+            await ctx.Message.RespondAsync($"Playing `{file}`");
 
             try
             {
@@ -155,7 +155,7 @@ namespace StormyBot.Bots.Commands
             finally
             {
                 await vnc.SendSpeakingAsync(false);
-                await ctx.Message.RespondAsync($"Finished playing `{filename}`");
+                await ctx.Message.RespondAsync($"Finished playing `{file}`");
             }
 
             if (exc != null)

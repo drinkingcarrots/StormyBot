@@ -6,8 +6,8 @@ using DSharpPlus.Interactivity.Extensions;
 using DSharpPlus.VoiceNext;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using StormyBot.Bots;
-using StormyBot.Bots.Commands;
+using StormyBot;
+using StormyBot.Commands;
 using System;
 using System.IO;
 using System.Text;
@@ -44,9 +44,6 @@ namespace StormyBot
 
             Client = new DiscordClient(config);
 
-
-            //Client.Ready += OnClientReady();
-
             Client.UseInteractivity(new InteractivityConfiguration
             {
                 Timeout = TimeSpan.FromMinutes(5)
@@ -57,6 +54,11 @@ namespace StormyBot
                 StringPrefixes = new string[] { configJson.Prefix },
                 EnableDms = false,
                 EnableMentionPrefix = true,
+            };
+
+            Client.VoiceStateUpdated += async (s, e) =>
+            {
+                
             };
 
             Commands = Client.UseCommandsNext(commandsConfig);
@@ -73,11 +75,6 @@ namespace StormyBot
             await Client.ConnectAsync();
 
             await Task.Delay(-1);
-        }
-
-        private Task OnClientReady(ReadyEventArgs e)
-        {
-            return Task.CompletedTask;
         }
     }
 }

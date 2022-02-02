@@ -1,5 +1,0 @@
-﻿balls
-walls
-falls
-lolls
-zolls

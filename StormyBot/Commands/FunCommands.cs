@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace StormyBot.Bots.Commands
+namespace StormyBot.Commands
 {
     class FunCommands : BaseCommandModule
     {
